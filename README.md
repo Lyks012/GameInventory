@@ -7,6 +7,7 @@ This project is just a project example to learn how to use Basic Authentication 
 Download links:
 
 From Github: https://github.com/Lyks012/GameRating.git
+
 Postman Endpoints : https://documenter.getpostman.com/view/18127118/UVRBo6my
 
 ## Prerequisites
