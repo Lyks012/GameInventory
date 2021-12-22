@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>addGame</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form #form="ngForm" (submit)="addGame(form)">
+    <ion-item lines="full">
+      <ion-label position="floating">Name</ion-label>
+      <ion-input type="text" ngModel required name="name"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Price</ion-label>
+      <ion-input type="number" ngModel required name="price"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Category</ion-label>
+      <ion-select type="password" ngModel required name="category_id">
+        <ion-select-option
+          *ngFor="let category of categories"
+          value="{{category.id}}"
+          >{{category.name}}</ion-select-option
+        >
+      </ion-select>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block"
+          >Add game</ion-button
+        >
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

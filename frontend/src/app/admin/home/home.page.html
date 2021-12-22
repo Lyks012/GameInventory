@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button color="primary" (click)="goTo('admin/add-game')">
+    Create a game</ion-button
+  >
+  <ion-button color="secondary" (click)="goTo('admin/add-category')"
+    >Create a category</ion-button
+  >
+
+  <h1>List of Games</h1>
+
+  <div *ngFor="let category of categories">
+    <h2>
+      {{category.name}}<ion-button
+        (click)="editCategory(category.id, category.name)"
+        fill="clear"
+        shape="round"
+      >
+        edit category
+      </ion-button>
+      <ion-button
+        (click)="deleteCategory(category.id)"
+        fill="clear"
+        shape="round"
+        color="danger"
+      >
+        delete category
+      </ion-button>
+    </h2>
+
+    <div *ngFor="let game of category.games">
+      <ion-card color="light">
+        <ion-card-header>{{game.name}}</ion-card-header>
+        <ion-card-content>
+          <ion-button
+            fill="clear"
+            shape="round"
+            (click)="editGame(game.id, game.name)"
+          >
+            Edit
+          </ion-button>
+          <ion-button
+            fill="clear"
+            color="danger"
+            (click)="deleteGame(game.id)"
+            shape="round"
+          >
+            delete
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
