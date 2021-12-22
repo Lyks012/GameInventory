@@ -6,7 +6,8 @@ This project is just a project example to learn how to use Basic Authentication 
 
 Download links:
 
-From Github: https://github.com/tcrurav/Ionic5NodeAuthBasic.git
+From Github: https://github.com/Lyks012/GameRating.git
+Postman Endpoints : https://documenter.getpostman.com/view/18127118/UVRBo6my
 
 ## Prerequisites
 
@@ -21,7 +22,7 @@ You need a working environment with:
 The best option to start with this project is cloning it in your PC:
 
 ```
-git clone https://github.com/tcrurav/Ionic5NodeAuthBasic.git
+git clone https://github.com/Lyks012/GameRating.git
 ```
 
 This project contains 2 different parts:
@@ -34,41 +35,45 @@ You need a node.js working environment. The LTS is recommended: https://nodejs.o
 Once you have cloned the project install all dependencies.
 
 ```
-cd Ionic5NodeAuthBasic/frontend
+cd frontend
 npm install
 
-cd Ionic5NodeAuthBasic/backend
+cd backend
 npm install
 ```
 
 - For your backend part:
 
-1. You need a Ionic5NodeAuthBasic/backend/.env file with a key for the JWT and the data for the connection to your MySQL Server:
+1. You need a backend/config/db.config.js file with  the data for the connection to your MySQL Server:
 
 ```
-JWT_SECRET=V3RY#1MP0RT@NT$3CR3T#
 
-MYSQL_DATABASE=db_motorbikes_dev
-MYSQL_USER=root
-MYSQL_PASSWORD=sasa
-MYSQL_ROOT_PASSWORD=sasa
-
-DB_HOST=localhost
-
-NODE_ENV=development
+{
+  HOST: "localhost",
+  USER: "root",
+  PASSWORD: "",
+  DB: "video_games",
+  dialect: "mysql",
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000,
+  },
+}
 ```
 
 2. You need a mysql server working.
 
-3. Create the mysql database, that in our case is "db_motorbikes_dev". You can import it from the file db_motorbikes_dev.sql included in this project. https://github.com/tcrurav/Ionic5NodeAuthBasic/blob/master/backend/db_motorbikes_dev.sql
+3. Create the mysql database, that in our case is "video_games". You can import it from the file db_motorbikes_dev.sql included in this project. https://github.com/tcrurav/Ionic5NodeAuthBasic/blob/master/backend/db_motorbikes_dev.sql
 
 Finally to start enjoying this project.
 
 ```
-cd Ionic5NodeAuthBasic/backend
+cd backend
 npm start
 
-cd Ionic5NodeAuthBasic/frontend
+cd frontend
 ionic serve
 ```
 
@@ -85,7 +90,5 @@ Enjoy!!!
 
 ## Acknowledgments
 
-- https://www.techiediaries.com/ionic/ionic-5-jwt-authentication-node-expressjs/. Excellent tutorial as a basis for learning the Authentication basics needed for this project.
-- https://www.techiediaries.com/ionic-ui-forms-theming/. Excellent tutorial to create login/register UI in Ionic 5.
-- https://gist.github.com/PurpleBooth/109311bb0361f32d87a2. A very complete template for README.md files.
-- https://www.theserverside.com/video/Follow-these-git-commit-message-guidelines. Guidelines to write properly git commit messages.
+- https://sequelize.org/master/. The ORM sequelize documentation.
+- https://github.com/tcrurav/Ionic5NodeAuthBasic/edit/master/README.md. A complete README.md that inspired me.
